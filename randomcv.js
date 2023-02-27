@@ -33,7 +33,7 @@ function generarcv() {/** Utiliza la función $.ajax() de JQuery para leer los d
 }
 
 function abrirsolapa() {
-  window.open("docs/cv.html")
+  window.open("cv.html")
 }
 
 function ocultarexperiencia() {
