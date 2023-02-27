@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titulo">Cv</title>
+    <script src="js/jquery-3.6.3.min.js" type="text/javascript"></script>
+    <!-- Carga JQuery para usar la función $.Ajax() sugerida por el sitio RANDOM USER GENERATOR -->
+    <script src="js/randomcv.js"></script>
+    <link rel="stylesheet" href="Estilos/EstiloCV.css">
+    <link rel="icon" type="image/png" href="Estilos\icons8-currículum-16.png" title="cv iconos">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+
+<body onload="generarcv()">
+    <nav>
+        <div class="logo">
+            <img src="Estilos\icons8-currículum-16.png" alt="Logo">
+        </div>
+        <div class="barnav">
+            <ul>
+                <li>
+                    <a>Ir a...</a>
+                    <ul>
+                        <li><a href="#sinfopers">Información personal</a></li>
+                        <li><a href="#sexperiencia">Experiencia</a></li>
+                        <li><a href="#shabilidades">Habilidades</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a>Experiencia</a>
+                    <ul class="manito">
+                        <li><a onclick="mostrarexperiencia()">Ver formulario</a></li>
+                        <li><a onclick="ocultarexperiencia()">Ocultar formulario</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a>Habilidades</a>
+                    <ul class="manito">
+                        <li><a onclick="mostrarhabilidades()">Ver formulario</a></li>
+                        <li><a onclick="ocultarhabilidades()">Ocultar formulario</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <div onclick="window.open('acerca.html', 'popup', `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+                width=800,height=290,left=200,top=160`)">Acerca de</div>
+            </ul>
+        </div>
+    </nav>
+    <section class="forms">
+        <br><br>
+        <form id="fexperiencia">
+            <label for="empresa">Nombre de la Empresa:</label>
+            <input type="text" name="empresa" id="empresa" required>
+            <label for="anioe">Año:</label>
+            <input type="text" name="anioe" id="anioe">
+            <label for="funciones">Funciones desempeñadas:</label>
+            <textarea name="funciones" id="funciones" required></textarea>
+            <input type="submit" value="Agregar Experiencia">
+        </form>
+        <script>/*Lee el contenido del formulario y lo inserta en la Sección Experiencia (luego vacía el formulario) */
+            var formulario1 = document.querySelector('#fexperiencia');
+            var insertardespues = document.querySelector('#acava');
+            formulario1.addEventListener('submit', function (event) {
+                event.preventDefault();
+                var empresa = document.querySelector('#empresa').value;
+                var anioe = document.querySelector('#anioe').value;
+                var funciones = document.querySelector('#funciones').value;
+                var pp1 = document.createElement("p");
+                var pp2 = document.createElement("p");
+                var pp3 = document.createElement("p");
+                var pp4 = document.createElement("br");
+                pp1.textContent = "Empresa: " + empresa;
+                pp2.textContent = "Año: " + anioe;
+                pp3.textContent = "Funciones: " + funciones;
+                var insertaraca = document.querySelector("#acava"); // <div id="app">App</div>
+                insertaraca.insertAdjacentElement("beforebegin", pp1);
+                insertaraca.insertAdjacentElement("beforebegin", pp2);
+                insertaraca.insertAdjacentElement("beforebegin", pp3);
+                insertaraca.insertAdjacentElement("beforebegin", pp4);
+                document.getElementById("fexperiencia").reset();
+            });
+        </script>
+        <br>
+        <form id="fhabilidades">
+            <label for="tituloh">Título obtenido:</label>
+            <input type="text" name="tituloh" id="tituloh" required>
+            <label for="anioh">Año:</label>
+            <input type="text" name="anioh" id="anioh">
+            <label for="institucion">Institución:</label>
+            <input type="text" name="institucion" id="institucion" required></textarea>
+            <input type="submit" value="Agregar Habilidades">
+        </form>
+        <script>/*Lee el contenido del formulario y lo inserta al final, en la Sección Habilidades (luego vacía el formulario) */
+            var formulario = document.querySelector('#fhabilidades');
+            formulario.addEventListener('submit', function (event) {
+                event.preventDefault();
+                var tituloh = document.querySelector('#tituloh').value;
+                var anioh = document.querySelector('#anioh').value;
+                var institucion = document.querySelector('#institucion').value;
+                var resultadoh = document.createElement('div');
+                resultadoh.innerHTML = '<p>Título obtenido: ' + tituloh + '</p>' +
+                    '<p>Año: ' + anioh + '</p>' +
+                    '<p>Institución: ' + institucion + '</p><br>';
+                document.body.appendChild(resultadoh);
+                document.getElementById("fhabilidades").reset();
+            });
+        </script>
+
+        <header></header>
+    </section>
+    <div class="contenido"></div>
+    <h1 id="nombrecv"></h1>
+
+    <section class="infopers" id="sinfopers">
+        <div id="div1">
+            <p id="foto"></p>
+        </div>
+        <div id="div2">
+            <h2>Información Personal</h2>
+            <p id="genero"></p>
+            <p id="nacim"></p>
+            <p id="direccion"></p>
+            <p id="ciudad"></p>
+            <p id="pais"></p>
+            <p id="correo"></p>
+            <p id="tel"></p>
+            <p id="hoy"></p>
+        </div>
+    </section>
+    <hr>
+    <section id="sexperiencia">
+        <h2>Experiencia</h2>
+        <div id="acava"></div>
+    </section>
+    <hr>
+    <section id="shabilidades">
+        <h2>Habilidades</h2>
+    </section>
+</body>
+
+</html>

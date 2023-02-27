@@ -1,0 +1,135 @@
+body {
+  background-color: #7DAAD0;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+}
+
+.manito {
+  cursor: pointer;
+}
+
+p,
+h1,
+h2,
+nav {
+  font-family: Comfortaa;
+}
+
+p,
+h2 {
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 0%;
+}
+
+.infopers {
+  display: flex;
+  flex-direction: row;
+}
+
+#div1 {
+  flex: 1;
+  text-align: center;
+}
+
+#div2 {
+  flex: 3;
+  text-align: justify;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: left;
+  background: rgb(207, 211, 214);
+  font-family: sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: black
+}
+
+nav .logo {
+  padding: 13px 20px 0px 20px;
+  font-weight: black;
+}
+
+nav .barnav {
+  display: grid;
+  grid-template-columns: repeat(3, auto 1fr);
+  margin-right: 30px;
+}
+
+nav .barnav div {
+  padding: 4px 20px;
+}
+
+nav .barnav div:hover {
+  cursor: pointer;
+  background: #565ef7;
+  color: aliceblue;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  text-align: center;
+  padding: 2px 6px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background: #565ef7;
+  color: aliceblue;
+}
+
+@media only screen and (max-width: 1442px) {
+  body {
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 1107px) {
+  body {
+    margin-top: 51px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  body {
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .infopers {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 594px) {
+
+  p,
+  h2 {
+    text-align: left
+  }
+
+  body {
+    margin-top: 79px;
+  }
+}
