@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de CV aleatorios</title>
+    <link rel="stylesheet" href="docs/Estilos/Estiloprpal.css">
+    <script src="docs/js/randomcv.js"></script>
+    <link rel="icon" type="image/png" href="docs/Estilos/icons8-currículum-16.png" title="cv iconos">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="Docs\Estilos\icons8-currículum-16.png" alt="Logo">
+        </div>
+        <div class="barnav">
+            <div onclick="abrirsolapa()">Generar Nuevo CV aleatorio</div>
+            <div onclick="window.open('docs/acerca.html', 'popup', `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+            width=800,height=290,left=200,top=140`)">Acerca de</div>
+        </div>
+    </nav>
+
+    <div class="contenido"></div>
+
+    <h1>Generador de CV aleatorios</h1>
+    <h2>¿Qué hace esta página?</h2>
+    <p>
+        Esta página, como indica su título, es un generador de currículums con contenido aleatorio. Cada vez que se
+        clickea
+        en la barra del navegador "Generar Nuevo CV aleatorio" un nuevo CV de una persona
+        ficticia es generado. Se puede utilizar tantas veces como sea necesario. Los datos personales son tomados de la
+        página "<A HREF="https://randomuser.me/" target="_blank">RANDOM USER GENERATOR</A>", mientras que para la
+        secciones
+        "Experiencia" y "Habilidades" se habilita un formulario para cada una de ellas, mediante el cual puede
+        completarse
+        esa información manualmente. Para finalizar, es posible ocultar cada uno de los formularios (y volverlos a
+        mostrar).
+    </p>
+    <p>Espero lo disfruten.</p>
+</body>
+
+</html>
